@@ -26,7 +26,7 @@ From (1) to (2), the AT (SFTP client) is the initiator as it wants to PULL file 
 
 Whenever AT wants to get access to source system, the AT's private key will generate a digital signature that the source system, through the AT public key stored there, can match with the user's account.
 
-cid:65f08800-e0c1-4545-a5c1-54b0a900a3e5![image](https://github.com/Amoschoy/SFTP-Concepts/assets/91897502/14451671-6306-4129-a27f-a4c37b5074f6)
+[image](https://github.com/Amoschoy/SFTP-Concepts/assets/91897502/14451671-6306-4129-a27f-a4c37b5074f6)
 
 
 From (2) to (3), consumer system (SFTP client) will be the initiator as it wants to PULL the processed file from AT (SFTP server)
