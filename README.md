@@ -12,10 +12,12 @@ Certificates
 
 
 What is SFTP?
+
 SFTP, or Secure File Transfer Protocol, is a secure file transfer protocol that uses secure shell encryption to provide a high level of security for sending and receiving file transfers. SFTP is similar to FTPS in that it uses AES and other algorithms to secure data as it travels between different systems.
 
 
 How does SFTP work?
+
 Using Active transfer SFTP Public Key Authentication as an example.
 
 The whole file transfer process consists of three locations: source system, active transfer(AT) and consumer system.
