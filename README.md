@@ -5,7 +5,7 @@ Examples of Systems
 2. Active Transfer Server
 3. Consumer System
 
-Certificates
+SSH Key Pairs
 - Public and Private key (Source System)
 - Public and Private key (Active Transfer Server)
 - Public and Private key (Consumer System)
@@ -37,3 +37,4 @@ From (2) to (3), consumer system (SFTP client) will be the initiator as it wants
 Hence, consumer system will send its public key to be stored inside AT server.
 
 Similarly, whenever consumer system wants to get access to AT SFTP server, the consumer system's private key will generate a digital signature that the AT server, through the consumer system's public key stored there, can match with the user's account.
+
