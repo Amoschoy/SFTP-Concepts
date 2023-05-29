@@ -1,1 +1,46 @@
+---steps---
 
+###Generate a key pair (public and private) for the consumer system  
+ssh-keygen -t rsa -b 4096 -C "RSA 4096 bit Keys"
+
+###Generate a key pair for Active Transfer server
+ssh-keygen -t rsa -b 4096 -C "RSA 4096 bit Keys"
+
+###Store the consumer system's public key in AT
+1) Go to Certificates, click on add
+2) Fill in the fields and browse for source system's public key which was generated earlier
+3) Click save
+
+###Store the AT's public key and private key in AT
+1) To store AT private key, Go to certificates, click on add
+2) Fill in the fields and browse for AT's private key which was generated earlier
+3) Click save
+
+### To store AT public key, Go to certificates, click on add
+1) Fill in the fields and browse for AT's public key which was generated earlier
+2) Click save
+
+###Create a listener on Active Transfer
+1) Go to listener tab and click on add
+2) Fill in the Name: ATserver, Host: localhost and Port:2002
+3) Click save
+
+###Create a user
+1) Click on users tab and click add to create a new user called dev1
+2) Add the source system public key under Trusted Public SSH key alias
+
+###Save AT's public key in source system
+1) In source system VM, create a file called authorized_keys inside .ssh folder
+2) Save the AT public key in this authorized_keys file
+
+
+---SFTP commands---
+$ sftp -P 2002 dev1@192.168.11.1 (to connect to AT SFTP server from SOURCE)
+sftp > put test.csv (upload file to AT server from SOURCE)
+
+
+ssh-copy-id installs an SSH key on a server as an authorized key. 
+Its purpose is to provide access without requiring a password for each login. 
+This facilitates automated, passwordless logins and single sign-on using the SSH protocol.
+
+$ ssh-copy-id -i ~/.ssh/activetransfer_rsa.pub source@77.134.54.101 -p 2222
